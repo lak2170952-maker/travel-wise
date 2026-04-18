@@ -1,0 +1,271 @@
+/* styles.css
+   Main stylesheet for Veteran Support Network
+*/
+
+/* Color variables chosen for strong contrast and consistency */
+:root {
+  --primary: #123b6d;
+  --primary-dark: #0b2747;
+  --accent: #f4b41a;
+  --bg: #f5f7fa;
+  --text: #111111;
+  --muted: #555555;
+  --white: #ffffff;
+}
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  /* Background image requirement */
+  background-image: url("../images/background-flag.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Wrapper to improve readability over background image */
+.page-wrapper {
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.92);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header and navigation */
+/* Using class .site-header instead of header element selector so we can reuse styles on any header if needed */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--white);
+  border-bottom: 1px solid #dddddd;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  color: var(--white);
+  min-height: 260px;
+  background-image: url("../images/hero-veterans.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(18, 59, 109, 0.9), rgba(11, 39, 71, 0.9));
+  padding: 3rem 1.5rem;
+}
+
+.hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+  color: #e4ecf7;
+}
+
+.hero-actions .btn {
+  margin-right: 0.5rem;
+}
+
+/* Sections */
+.section {
+  padding: 2.5rem 1.5rem;
+}
+
+.section.alt {
+  background-color: #f0f3f8;
+}
+
+.section h1,
+.section h2 {
+  max-width: 960px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.section p,
+.section ul,
+.section table {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards layout */
+.cards {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card img {
+  max-width: 48px;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background-color: var(--accent);
+  color: #222222;
+}
+
+.btn.primary:hover {
+  background-color: #ffd45a;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Table */
+.resource-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.resource-table caption {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.resource-table th,
+.resource-table td {
+  border: 1px solid #cccccc;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.resource-table th {
+  background-color: #e3e9f3;
+}
+
+/* Contact form */
+.contact-form {
+  max-width: 600px;
+  margin: 1.5rem auto 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  font: inherit;
+}
+
+.form-feedback {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+}
+
+/* Footer */
+.site-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background-color: var(--white);
+}
+
+/* Responsive design */
+/* Mobile-first; adjust for larger screens */
+@media (min-width: 768px) {
+  .hero-overlay {
+    padding: 4rem 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .site-header {
+    padding: 1rem 2.5rem;
+  }
+
+  .section {
+    padding: 3rem 2.5rem;
+  }
+}
