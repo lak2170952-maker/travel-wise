@@ -73,7 +73,9 @@ body {
 .nav-list a:hover,
 .nav-list a[aria-current="page"] {
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.1rem;
 }
 
 /* Hero section */
