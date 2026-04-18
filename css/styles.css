@@ -80,11 +80,6 @@ body {
 .hero {
   position: relative;
   color: var(--white);
-  min-height: 280px;
-  background-image: url("../images/hero-veterans.jpg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .hero-img {
@@ -242,6 +237,22 @@ body {
   border-radius: 4px;
   border: 1px solid #cccccc;
   font: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.75rem 1rem;
+  background: #123b6d;
+  color: #ffffff;
+  z-index: 1000;
+  transform: translateY(-120%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 .form-feedback {
